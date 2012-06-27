@@ -11,10 +11,18 @@ def minhash(userList, q):
     userMinhashList = []
     for user, itemList in userList:
         num = len(itemList)
+        minSeqList = getMinSeq(q, num)
+        userMinhashList.append((user, [itemList[i] for i in minSeqList]))
+    return userMinhashList
+
+def getMinSeq(q, num):
+    minSeqList  = []
+    for i in range(q):
         seqList = [(i, random.randint(1, 10 ** 6)) for i in range(num)]
         m = min(seqList, key=operator.itemgetter(1))
-        userMinhashList.append((user, itemList[m[0]]))
-    return userMinhashList
+        minSeqList.append(m[0])
+    return minSeqList
+
         
 
 if __name__ == "__main__":
