@@ -17,6 +17,7 @@ def minhash(userList, q):
 def getMinSeqItem(itemList, q):
     ''' @itemList : [item1, item2...]
         @q : the num of minSeq
+	@return : [item7, item4, ....]
     '''
     num = len(itemList)
     minSeqList = getMinSeq(q, num)
