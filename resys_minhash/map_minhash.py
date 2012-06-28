@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 #coding=utf-8
+'''@brief : using minhash to cluster the sim user.
+'''
 import sys
 import minhash as mh
 
